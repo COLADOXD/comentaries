@@ -1,6 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Comments from "../components/Comments.vue";
+</script>
 <template>
-  <div class="flex flex-row justify-between p-6 bg-amber-600 items-center">
+  <div
+    class="flex flex-row justify-between px-6 py-4 bg-amber-600 items-center text-white"
+  >
     <div class="flex items-center flex-col">
       <div>
         <p class="font-bold">Frontend Mentor</p>
@@ -24,7 +28,7 @@
       </svg>
     </div>
   </div>
-  <div class="flex justify-between p-6 bg-sky-500 text-sm">
+  <div class="flex justify-between px-6 py-2 bg-sky-500 text-sm text-white">
     <div class="flex flex-row items-center">
       <p>sorty by :&nbsp;</p>
       <div class="font-bold flex flex-row items-center justify-center">
@@ -45,8 +49,7 @@
         </svg>
       </div>
     </div>
-    <div class="p-3 bg-blue-800 rounded-md text-white font-bold">
-      + Add Feedback
-    </div>
+    <button class="p-3 bg-blue-800 rounded-md font-bold">+ Add Feedback</button>
   </div>
+  <Comments />
 </template>
