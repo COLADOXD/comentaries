@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import Comments from "../components/Comments.vue";
+import AddFeedback from "../components/AddFeedback.vue";
+import { ref, reactive } from "vue";
+
+const isViewFeedback = ref(true);
+
+const saveFeedback = ref([]);
+
+const state = reactive({});
 </script>
 <template>
   <div
@@ -49,7 +57,13 @@ import Comments from "../components/Comments.vue";
         </svg>
       </div>
     </div>
-    <button class="p-3 bg-blue-800 rounded-md font-bold">+ Add Feedback</button>
+    <button
+      @click="isViewFeedback = !isViewFeedback"
+      class="p-3 bg-blue-800 rounded-md font-bold"
+    >
+      + Add Feedback
+    </button>
   </div>
   <Comments />
+  <AddFeedback v-show="isViewFeedback" />
 </template>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { PatchFlags } from "@vue/shared";
-
 console.log("hola");
 </script>
 <template>
