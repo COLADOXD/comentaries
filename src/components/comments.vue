@@ -1,6 +1,4 @@
-<script setup lang="ts">
-console.log("hola");
-</script>
+<script setup lang="ts"></script>
 <template>
   <div class="px-6 py-6">
     <div class="bg-white p-6 flex flex-col rounded-xl">

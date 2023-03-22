@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import Comments from "../components/Comments.vue";
 import AddFeedback from "../components/AddFeedback.vue";
-import { ref, reactive } from "vue";
+import { ref, reactive, handleError } from "vue";
 
 const isViewFeedback = ref(true);
 
-const saveFeedback = ref([]);
+const saveFeedback: any = ref([]);
 
-const state = reactive({});
+const handleAddFeedback = (tittle: string, comment: string, tag: string) => {
+  saveFeedback.value.push({ tittle, comment, tag });
+  isViewFeedback.value = !isViewFeedback.value;
+  console.log("se ejecuta?");
+};
 </script>
 <template>
   <div
@@ -64,6 +68,6 @@ const state = reactive({});
       + Add Feedback
     </button>
   </div>
-  <Comments />
-  <AddFeedback v-show="isViewFeedback" />
+  <Comments :saveFeedback="saveFeedback" />
+  <AddFeedback v-show="isViewFeedback" @apply-feedback="handleAddFeedback" />
 </template>
