@@ -2,7 +2,7 @@
 import { defineEmits, ref } from "vue";
 
 const emit = defineEmits(["applyFeedback"]);
-const tittle = ref("");
+const title = ref("");
 const comment = ref("");
 const tags = ref([
   { text: "UI", isActive: true },
@@ -14,7 +14,7 @@ const tags = ref([
 
 const onAply = () => {
   const tag = tags.value.find((tag) => tag.isActive === true);
-  emit("applyFeedback", tittle, comment, tag?.text);
+  emit("applyFeedback", title, comment, tag?.text);
 };
 
 const toggleSelected = (selectedTag) => {
@@ -46,12 +46,12 @@ const toggleSelected = (selectedTag) => {
         />
       </svg>
       <div class="p-6">
-        <p class="mb-3 font-medium text-lg">Add tittle</p>
+        <p class="mb-3 font-medium text-lg">Add title</p>
         <input
-          v-model="tittle"
+          v-model="title"
           class="rounded-md px-2"
           type="text"
-          placeholder="Tittle"
+          placeholder="Title"
         />
         <p class="my-3 font-medium text-lg">Add Comment</p>
         <input

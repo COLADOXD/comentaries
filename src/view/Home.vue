@@ -1,14 +1,20 @@
 <script setup lang="ts">
 import Comments from "../components/Comments.vue";
 import AddFeedback from "../components/AddFeedback.vue";
-import { ref, reactive, handleError } from "vue";
+import { ref } from "vue";
 
-const isViewFeedback = ref(true);
+const isViewFeedback = ref(false);
 
-const saveFeedback: any = ref([]);
+const saveFeedback: any = ref([
+  {
+    title: "Add tags for solutions..",
+    comment: "Easir to search for solutions on a specific stack..",
+    tag: "UI",
+  },
+]);
 
-const handleAddFeedback = (tittle: string, comment: string, tag: string) => {
-  saveFeedback.value.push({ tittle, comment, tag });
+const handleAddFeedback = (title: string, comment: string, tag: string) => {
+  saveFeedback.value.push({ title, comment, tag });
   isViewFeedback.value = !isViewFeedback.value;
   console.log("se ejecuta?");
 };
